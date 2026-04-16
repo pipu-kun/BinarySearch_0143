@@ -39,5 +39,15 @@ void bubbleShort(){
 }
 
 void display(){
-    
+    cout << "------------------------------------\n";
+    cout << "     element setelah urut(Asc)      \n";
+    cout << "------------------------------------\n";
+
+    for (int i; i < nPanjang; i++){
+        cout << element[i];
+        if (i < nPanjang -1){
+            cout << ">";
+        }
+    }
+    cout << endl;
 }
