@@ -17,4 +17,9 @@ void input(){
     cout << "------------------------------------\n";
     cout << "           Masukan Array            \n";
     cout << "------------------------------------\n";
+
+    for (int i; i < nPanjang; i++){
+        cout << "Data ke-" << (i + 1) << ":";
+        cin >> element[i]
+    }
 }
