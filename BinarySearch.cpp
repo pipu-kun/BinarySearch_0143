@@ -7,7 +7,9 @@ int x;
 
 void input(){
     while (true){
-        if (nPanjang <= 0){
+        cout << "masukan element (maks10):";
+        cin >> nPanjang;
+        if (nPanjang <= 10){
             break;
         }else{
             cout << "\nJumlah element tidak boleh lebih dari 10.\n";
@@ -20,18 +22,18 @@ void input(){
 
     for (int i; i < nPanjang; i++){
         cout << "Data ke-" << (i + 1) << ":";
-        cin >> element[i]
+        cin >> element[i];
     }
 }
 
 void bubbleShort(){
-    int pass; = 1;
+    int pass = 1;
     do {
-        for (int i = 0; i <= nPanjang - 1 - pass; i++){
-            if (element[i] > element[i-1]){
-                int temp = element[i];
-                element[i] = element[i+1];
-                element[i+1] = temp;
+        for (int j = 0; j <= nPanjang - 1 - pass; j++){
+            if (element[j] > element[j+1]){
+                int temp = element[j];
+                element[j] = element[j+1];
+                element[j+1] = temp;
             }
         }
         pass++;
@@ -43,7 +45,7 @@ void display(){
     cout << "     element setelah urut(Asc)      \n";
     cout << "------------------------------------\n";
 
-    for (int i; i < nPanjang; i++){
+    for (int i = 0; i < nPanjang; i++){
         cout << element[i];
         if (i < nPanjang - 1){
             cout << ">";
@@ -62,7 +64,7 @@ void BinarySearch(){
         cout << "Search element:";
         cin >> x;
 
-        int low;
+        int low = 0;
         int high = nPanjang -1;
 
         do{
@@ -84,6 +86,13 @@ void BinarySearch(){
         }
 
         cout << "Search Again? (Y/n)";
-        cin >> y;
-    }while(ulang == 'y' || ulang == 'Y')
+        cin >> ulang;
+    }while(ulang == 'y' || ulang == 'Y');
+}
+
+int main(){
+    input();
+    bubbleShort();
+    display();
+    BinarySearch();
 }
